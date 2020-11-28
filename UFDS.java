@@ -37,18 +37,13 @@ class DisjointUnionSets {
         if (xRoot == yRoot) 
             return; 
   
-        if (rank[xRoot] < rank[yRoot]) 
-  
+        if (rank[xRoot] < rank[yRoot]) {
             parent[xRoot] = yRoot; 
-  
-        else if (rank[yRoot] < rank[xRoot]) 
-  
-            parent[yRoot] = xRoot; 
-  
-        { 
-            parent[yRoot] = xRoot; 
-  
-            rank[xRoot] = rank[xRoot] + 1; 
-        } 
-    } 
-} 
+        } else {
+            if (rank[xRoot] == rank[yRoot]) {
+              rank[xRoot] = rank[xRoot] + 1;
+            }
+            parent[yRoot] = xRootl
+        }
+    }
+}
